@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["version"]
+
+name = "certifi"
+description = "Python package for providing Mozilla's CA Bundle."
+readme = "README.rst"
+authors = [
+    {name = "Kenneth Reitz", email = "me@kennethreitz.com"},
+]
+license = "MPL-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.urls]
+Homepage = "https://github.com/certifi/python-certifi"
+Source = "https://github.com/certifi/python-certifi"
+
+[tool.setuptools]
+packages = ["certifi"]
+package-dir = {certifi = "certifi"}
+package-data = {certifi = ["*.pem", "py.typed"]}
+
+[tool.setuptools.dynamic]
+version = {attr = "certifi.__version__"}
